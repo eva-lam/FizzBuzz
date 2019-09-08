@@ -20,4 +20,4 @@ public class FizzBuzzer
         }
     }
 }
-//what if I put number %3 first? how would that change 
+//what if I put number %3 first? how would that change the sequence?
