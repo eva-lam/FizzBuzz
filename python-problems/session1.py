@@ -1,3 +1,4 @@
+import random
 #Write a program that prints ‘Hello World’ to the screen.
 '''
 def hello():
@@ -81,6 +82,7 @@ def inputNumber(message):
         try:
             userInput = int(input(message))    
             sum = 0 
+            product = 1
             anotherInput = input('what method you like? 1 for sum, 2 for factorial:') 
             if (int(anotherInput)== 1):
                 for i in range(1, userInput+1): 
@@ -88,7 +90,7 @@ def inputNumber(message):
                  
             elif (int(anotherInput)==2):
                 for i in range(1, userInput+1): 
-                    sum *= i 
+                    product *= i 
             
             print(sum)
 
@@ -116,5 +118,47 @@ for i in range(1,13):
 #printing all primes up to the largest number you can easily represent is fine too.
 
 
+'''
+n = int(input("tell me how many prime numbers you want to print: "))
+count = 0
+for i in range(1,1000):
+    if i>1 and i%2 !=0 and count !=n:
+        count = count+1
+        print (i)
+'''
 
+#9 Write a guessing game where the user has to guess a secret number. 
+# After every guess the program tells the user whether their number was too large or too small. 
+# At the end the number of tries needed should be printed. 
+# It counts only as one try if they input the same number multiple times consecutively.
+
+def test():
+    numOfCount = 0 
+    j = round(random.random()*100)
+    while True:
+        try:
+            n = int(input('Guess a number: ')) 
+        except ValueError:
+            print("Not an integer! Try again.")
+            continue
+        
+        if n ==j: 
+            print('bingo!,this is how many times you tried ',numOfCount)
+
+        elif n>j:
+            print('Too big')
+
+        elif n<j:
+            print('Too small')
+
+        numOfCount +=1 
+
+print(test())
+
+
+ 
     
+
+        
+    
+
