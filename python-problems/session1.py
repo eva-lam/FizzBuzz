@@ -1,4 +1,6 @@
 import random
+import datetime 
+from datetime import date
 #Write a program that prints ‘Hello World’ to the screen.
 '''
 def hello():
@@ -131,7 +133,7 @@ for i in range(1,1000):
 # After every guess the program tells the user whether their number was too large or too small. 
 # At the end the number of tries needed should be printed. 
 # It counts only as one try if they input the same number multiple times consecutively.
-
+'''
 def test():
     numOfCount = 0 
     j = round(random.random()*100)
@@ -154,9 +156,31 @@ def test():
         numOfCount +=1 
 
 print(test())
+'''
+#Write a program that prints the next 20 leap year 
+'''
+current_year = date.today().year 
 
+def leapyear():
+    count = 0 
+    years=[]
+    for i in range(current_year,5000):
+        condition_1 = i%4 
+        condition_2 = i%100
+        condition_3 = i%400 
+        if count <20 and condition_1 ==0 and condition_2>0:
+            count = count+1 
+            years.append(i)
+        
+        elif count<20 and condition_3==0:
+            count = count+1
+            years.append(i)
+        
+    return years
 
- 
+print(leapyear())
+
+'''
     
 
         
