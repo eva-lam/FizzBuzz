@@ -1,6 +1,7 @@
 import random
 import datetime 
 from datetime import date
+import math
 #Write a program that prints ‘Hello World’ to the screen.
 '''
 def hello():
@@ -181,8 +182,62 @@ def leapyear():
 print(leapyear())
 
 '''
-    
+#List & Strings 
+#1 Write a functiont that returns largest element in a list 
+'''
+def checkLargest(n): 
+    length = len(n)
+    biggest=1
 
+    for i in range(length): 
+        if n[i]>biggest:
+            biggest = n[i]
+    
+    return biggest 
+
+print(checkLargest([3,5,18,80,120,34]))
+'''
+    
+#2 reverse a list 
+'''
+def reverse(n):
+    list_length = len(n)
+    new_list =[]
+    print(list_length)
+    for i in range(list_length):
+        new_list.append( n[list_length-i-1])
+    
+    return new_list 
+
+print(reverse([7,4,6,7,0]))
+'''
+ #print framer 
+
+ #Write a function that takes a list of strings an prints them, one per line, in a rectangular frame. 
+ #For example the list ["Hello", "World", "in", "a", "frame"] gets printed as:
+
+def frame(n):
+    longestWord = ''
+    
+    lengthOflist = len(n)
+    
+    #know which is the longest word
+    for i in range(lengthOflist):
+        if(len(n[i])>len(longestWord)):
+            longestWord=n[i]
+    length_longestWord = len(longestWord)
+    lengthOfAsterisk = length_longestWord +4 
+    print('*'*lengthOfAsterisk)
+
+    for w in n:
+        space_to_add=length_longestWord - len(w)
+        # if(length_longestWord-len(w)==0):
+        print('* '+w+" " * space_to_add +' *')
+
+
+    print(lengthOfAsterisk*'*')   
+
+print(frame(["Hello", "World", "in", "a", "frame"]))
         
     
 
