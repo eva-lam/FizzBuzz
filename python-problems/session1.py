@@ -215,7 +215,7 @@ print(reverse([7,4,6,7,0]))
 
  #Write a function that takes a list of strings an prints them, one per line, in a rectangular frame. 
  #For example the list ["Hello", "World", "in", "a", "frame"] gets printed as:
-
+'''
 def frame(n):
     longestWord = ''
     
@@ -238,6 +238,189 @@ def frame(n):
     print(lengthOfAsterisk*'*')   
 
 print(frame(["Hello", "World", "in", "a", "frame"]))
+'''
+
+ #Write a function that checks whether an element occurs in a list.
+
+
+'''
+def check(testedlist,element):
+        for i in testedlist: 
+            if(i ==element): 
+                print("element exists")
+print(check([3,5,6,7,9],4))
+'''
+
+#Write a program that outputs all possibilities to put + or - or nothing between the numbers 1,2,…,9 (in this order) 
+#such that the result is 100. For example 1 + 2 + 3 - 4 + 5 + 6 + 78 + 9 = 100.
+'''
+import operator
+def checksum(): 
+    #divide and conquer 
+    target_sum = 100
+    num_list = [1,2,3,4,5,6,7,8,9]
+    combination = [1 ]
+    ops = {'+':operator.add,'-':operator.sub,'concat':''}
+
+    #option 1 addition
+
+    for i in range(1,len(num_list)):
+        # do recursive calls 
+        combination.append(str(i)+'+'+str(i+1))
+        combination.append(str(i)+'-'+str(i+1))
+        combination.append(str(i)+str(i+1))
+        print(combination)
+     # if plus doesn't work then call again and go to minus sign 
+
+    #option 2 minus 
+
+
+    print(combination)
+    #option 3 concat 
+
+
+    #filter those that returns to only target_sum 
+    #loop through combination 
+    newCombo = []
+    for eachSolution in combination: 
+        newCombo.append(eachSolution)
         
+    # return newCombo
+
+
+
+print(checksum())
+'''
+'''
+def i1():
+    """
+    Our helper function, here we will do the actual recursive call.
+    numbers is a list with all numbers we have to check. We start
+    with 1 to 9, but we always remove one number with each call
+
+    i is the current value of all numbers combined so that we can check
+    if it's 100 in the end. i is always an integer and never a string
+
+    path is what will be printed. It contains the previous nubmers
+    in a human readable format as a string (e.g. "1+2+4-5" if
+    numbers is still [6, 7, 8, 9]).
+
+    This function returns a list with all previously found paths
+    that are equal to 100. The return value can also be an empty list
+    """
+
+    def helper(numbers, i, path):
+        if not numbers and i == 100:
+            if path[-1] in ("+", "-"):
+                return [path[:-1]]
+
+            return [path]
+
+        if not numbers:
+            return []
+
+        # we prepare the recursive call. current is the number we will
+        # use for the addition/substraction/concatenation.
+        # numbers will be the remaining ones.
+        current = numbers[0]
+        numbers = numbers[1:]
+        return (
+                helper(numbers, i + current, path + str(current) + "+") +
+                helper(numbers, i - current, path + str(current) + "-") +
+                helper(numbers, i*10 + current, path + str(current) + "")
+        )
+ 
+    print("\n".join(helper([i for i in range(1, 10)], 0, "")))
+    '''
+
+    # Write a function that computes the running total of a list.
+
+'''
+def total(original_list): 
+    final = 0
+    for n in original_list: 
+        final +=n 
+        
+    return final 
     
 
+print(total([2,3,4,566,90]))
+'''
+
+# Write a function that tests whether a string is a palindrome.
+'''
+import re
+def testing(n): 
+    # loop through the string 
+    # delete all spaces 
+    formattedStr = re.sub(r'/[ _.,!"'/$&]/g', r'', n) 
+    result = re.sub(r'(/[ _.,!"'/$&]/g)', '',n)  
+    n.replace(regex,'') # replace space with 
+    y = len(n)
+
+    # palindrome 
+    for i in range(y): 
+        if n[i] != n[-1]:
+            return False
+    # slice the string
+
+    # return true if 
+
+print(testing('madam'))
+'''
+
+# Write three functions that compute the sum of the numbers in a list: 
+# using a for-loop, a while-loop and recursion. 
+# Subject to availability of these constructs in your language of choice.
+'''
+def first(n):
+    sum = 0
+    for i in n:
+        sum += i 
+    
+    return sum 
+
+# print(first([2,4,5,7,10,28]))
+'''
+'''
+def second(n): 
+    sum = 0 
+    while n:
+        for i in n: 
+            sum += i 
+        break
+    return sum 
+
+print(second([4,6,7,3,77,120]))
+'''
+'''
+def sum(x): 
+
+    total= 0
+    total = total+ x
+
+    return total
+
+
+
+def third(n):
+    length = len(n)
+    x= 0
+    for i in range(length):
+       x = sum(n[i])
+
+    return x
+print(third([4,5,6,10,20]))
+'''
+'''
+a = [2, 3, 5, 8]
+print(sum(i for i in a))
+'''
+
+def getSum(piece):
+    if len(piece)==0:
+        return 0
+    else:
+        return piece[0] + getSum(piece[1:]) 
+        
+print(getSum([1, 3, 4, 2, 5]))
