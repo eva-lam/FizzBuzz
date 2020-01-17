@@ -428,9 +428,64 @@ print(getSum([1, 3, 4, 2, 5]))
 
 # write a function that concat two lists 
 # [a,b,c,1,2,3]
-
+'''
 def cont(n,j): 
-
     return n+j
 print(cont([1,2,3],[5,6,4]))
+'''
+
+# Write a function that merges two sorted lists into 
+# a new sorted list. [1,4,6],[2,3,5] → [1,2,3,4,5,6]. 
+# You can do this quicker than concatenating them followed by a sort.
+'''
+def contsort(n,j): 
+
+    s = n+j
+    
+    print(s.sort())
+    return s.sort(reverse=False)
+
+print(contsort(['h','l','o'],['p','b','a'])
+'''
+
+# Write a function that rotates a list by k elements. 
+# For example [1,2,3,4,5,6] rotated by two becomes [3,4,5,6,1,2]. 
+# Try solving this without creating a copy of the list. 
+# How many swap or move operations do you need?
+'''
+def rotate(originalList,num):
+    output=[]
+
+    # append first the elements from num to length of originalList 
+    for item in range(len(originalList)-num, len(originalList)):
+        output.append(originalList[item])
+    
+    # append then the last elements 
+    for item in range(0,len(originalList)-num):
+        output.append(originalList[item])
+    
+    return output 
+
+
+
+# driver Code 
+originalList = [1,2,3,4,5,6]
+num = 3
+print(rotate(originalList,num))
+'''
+
+#14 Write a function that takes a number and 
+#returns a list of its digits. So for 2342 it should return [2,3,4,2].
+
+# turn number into string then split 
+'''
+def numToList(n):
+    # turn n to string 
+  
+    return [int(i) for i in str(n)]
+    #split string
+    
+
+print(numToList(2345))
+'''
 
