@@ -16,7 +16,7 @@
 
 # 6. Morse code was designed so that the length of each symbol is approximately 
 # inverse to the frequency of occurrence in text of the English language character that it represents
-
+'''
 MorseDict = {'A':'.-', 'B':'-...',
 'C':'-.-.', 'D':'-..', 'E':'.',
 'F':'..-.', 'G':'--.', 'H':'....',
@@ -58,4 +58,44 @@ def numToList(n):
     
 
 print(engToMorse('Hello'))
+'''
+
+#Implement the following sorting algorithms: 
+# Selection sort, Insertion sort, Merge sort, Quick sort, Stooge Sort. 
+# Check Wikipedia for descriptions.
+
+# The selection sort algorithm sorts an array by repeatedly finding the minimum element 
+# (considering ascending order) from unsorted part and putting it at the beginning. 
+# The algorithm maintains two subarrays in a given array.
+
+#1) The subarray which is already sorted.
+#2) Remaining subarray which is unsorted.
+
+#In every iteration of selection sort, the minimum element (considering ascending order) 
+#from the unsorted subarray is picked and moved to the sorted subarray.
+'''
+import random
+t = [random.randint(0, 100) for i in range(30)]
+# step 1: declare an unsorted array 
+unsorted_list = t
+
+# step 2: a function that identifies the min element. 
+def selectionSort(n):
+  
+    for i in range(len(n)):
+        # Find the minimum element in remaining  
+        # unsorted array 
+        min_idx = i 
+
+        for j in range(i+1, len(n)):
+            if n[j]< n[min_idx]: 
+                min_idx = j
+        
+        # swap found min element with first element 
+        n[i],n[min_idx]= n[min_idx],n[i] 
+    return n
+print(selectionSort(unsorted_list))
+'''
+#Insertion sort 
+
 

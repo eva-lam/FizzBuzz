@@ -1,9 +1,11 @@
-## Goal 
+## Coding Challenges in various languages
 
-Here I am playing with FizzBuzz and try to find the best solution that optimizes runtime, eliminate code smell and unnecessary iterations 
-Here I try to implement the solution using C#, Python, JS, and R 
+This repository keeps track on the coding challenges I have done in the past, in various languages.
 
-## Feedback 
+If the file name does not specify the challenge name, its number refers to [programming questions].
 
-Feel free to comment and contribute your thoughts ! 
+## Feedback
 
+Feel free to comment and give me feedback!How would you have solved them differently ?
+
+[programming questions]: https://adriann.github.io/programming_problems.html
