@@ -3,10 +3,6 @@ let assert = require('chai').assert;
 
 describe('problem5', () => {
 
-    it('should return 60 for n=15', () => {
-        
-    });
-
     it('should return 8 for n=5',()=>{
         assert.equal(problem5(5),8); 
     })

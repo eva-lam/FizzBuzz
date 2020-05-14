@@ -1,0 +1,22 @@
+{
+  "name": "ableton",
+  "version": "1.0.0",
+  "description": "modular-madness and unit test",
+  "main": "modular-madness.ts",
+  "dependencies": {
+    "@types/mocha": "^7.0.2",
+    "@types/node": "^13.13.4"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "cross-env": "^7.0.2",
+    "mocha": "^7.1.2",
+    "ts-node": "^8.10.1",
+    "typescript": "^3.8.3"
+  },
+  "scripts": {
+    "test": "mocha || true"
+  },
+  "author": "",
+  "license": "ISC"
+}
